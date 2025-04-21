@@ -1,0 +1,17 @@
+{% extends 'movies/_base.html' %}
+
+{% block content %}
+<div>
+  <h1>My Fav Movies App</h1>
+  <h2>Hello {{username|title}}, welcome back!</h2>
+  {% if movies %}
+    <ul>
+      {% for movie in movies %}
+        <li>{{ movie|upper }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>You don't have any favorites movies yet!</p>
+  {% endif %}
+</div>
+{% endblock %}
